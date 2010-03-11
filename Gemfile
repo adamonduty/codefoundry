@@ -8,7 +8,8 @@ gem "rails", "3.0.0.beta"
 
 # ActiveRecord requires a database adapter. By default,
 # Rails has selected sqlite3.
-gem "sqlite3-ruby", :require => "sqlite3"
+gem "sqlite3-ruby", :require => "sqlite3" # development
+# eventually use mysql or mysqlplus for production
 
 ## Bundle the gems you use:
 # gem "bj"
@@ -16,15 +17,12 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # gem "sqlite3-ruby", :require => "sqlite3"
 # gem "aws-s3", :require => "aws/s3"
 
-## Bundle gems used only in certain environments:
-# gem "rspec", :group => :test
-# group :test do
-#   gem "webrat"
-# end
-
 # repository access gems
 gem 'grit' # git
 # gem 'amp' # mercurial
+
+# background processing framework
+gem 'delayed_job'
 
 # search and indexing gems
 # gem 'ferret'
@@ -38,3 +36,9 @@ gem 'marker'
 # Oniguruma (install from source), see NOTES
 gem 'oniguruma' # cause rake gems:install to fail unless onig .so is installed
 gem 'ultraviolet', :require => 'uv'
+
+## Bundle gems used only in certain environments:
+# gem "rspec", :group => :test
+# group :test do
+#   gem "webrat"
+# end
